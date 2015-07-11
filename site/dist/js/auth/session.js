@@ -1,0 +1,2 @@
+angular.module("swhale.session",["ngStorage"]).service("Session",["$localStorage",function(e){return this.create=function(s){this.user=s,e.user=s},this.destroy=function(){this.user=null,delete e.user},this}]).run(["$rootScope","$localStorage","Session",function(e,s,o){e.Session=o,s.user&&(o.user=s.user)}]);
+//# sourceMappingURL=../../../sourcemaps/auth/session.js.map

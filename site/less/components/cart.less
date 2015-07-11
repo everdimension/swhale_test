@@ -1,0 +1,16 @@
+.cart-items-list {
+	color: @gray-dark;
+	min-width: 400px;
+	@media (max-width: 450px) {
+		min-width: 300px;
+		font-size: .9em;
+	}
+	> li {
+		padding-left: 10px;
+		padding-right: 10px;
+		&.card-item:hover {
+			background-color: @brand-primary;
+			color: white;
+		}
+	}
+}

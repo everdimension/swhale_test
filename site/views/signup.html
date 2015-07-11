@@ -1,0 +1,43 @@
+<div class="row" ng-show="showError">
+	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<div class="alert alert-danger">
+			<button class="close" ng-click="showError = false">&times;</button>
+			{{errorMsg}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<div class="panel panel-default panel-lg">
+			<div class="panel-body">
+				<form name="signupForm" ng-submit="signup(signupForm)" novalidate>
+					<div class="form-group" ng-class="{'has-error': signupForm.displayErrors && signupForm.email.$invalid}">
+						<label for="email">Email</label>
+						<input class="form-control" ng-model="credentials.email" type="email" name="email" id="email" required>
+					</div>
+
+					<div class="form-group" ng-class="{'has-error': signupForm.displayErrors && signupForm.password.$invalid}">
+						<label for="password">Password</label>
+						<input class="form-control" ng-model="credentials.password" type="password" name="password" id="password" required>
+					</div>
+					<div class="form-group" ng-class="{'has-error': signupForm.displayErrors && signupForm.passwordRepeat.$invalid}">
+						<label for="passwordRepeat">Repeat password</label>
+						<input class="form-control" ng-model="passwordCopy" same-pass="credentials.password" type="password" name="passwordRepeat" id="passwordRepeat" required>
+					</div>
+
+
+					<div class="form-group">
+						<button class="btn btn-primary btn-full-width" ng-disabled="Progress.isLoading('login')">
+							<span ng-show="Progress.isLoading('login')">loading...</span>
+							<span ng-hide="Progress.isLoading('login')">sign up</span>
+						</button>
+					</div>
+					<p class="text-center">
+						Already have an account? <a ui-sref="app.login">Login</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

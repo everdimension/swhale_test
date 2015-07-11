@@ -1,0 +1,2 @@
+angular.module("swhale.auth.signup",["swhale.auth.service"]).controller("SignupCtrl",["$scope","$state","AuthSvc",function(r,o,s){r.credentials={},r.showError=!1,r.errorMsg=null,r.formSuccess=!1,r.signup=function(n){return n.$invalid?void(n.displayErrors=!0):(r.showError=!1,o.formSuccess=!1,void s.signup(r.credentials).then(function(r){console.log("login res",r),o.formSuccess=!0,o.go("app.login")})["catch"](function(o){console.warn("login err",o),r.showError=!0,r.errorMsg=o.message}))}}]);
+//# sourceMappingURL=../../../sourcemaps/auth/signup-controller.js.map

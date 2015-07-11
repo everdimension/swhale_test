@@ -1,0 +1,20 @@
+<header class="navbar header">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8">
+				<nav>
+					<ul class="navbar-nav">
+						<li><a ui-sref-active="active" class="first" ui-sref="app.search">Home</a></li>
+						<li ng-hide="Session.user"><a ui-sref-active="active" ui-sref="app.login">Login</a></li>
+						<li ng-hide="Session.user"><a ui-sref-active="active" ui-sref="app.signup">Signup</a></li>
+						<li ng-show="Session.user" class="text-item">{{Session.user.email}}</li>
+						<li ng-show="Session.user"><a href="#" ng-click="AuthSvc.logout()">logout</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-xs-4" ng-show="Session.user">
+				<sw-cart></sw-cart>
+			</div>
+		</div>
+	</div>
+</header>

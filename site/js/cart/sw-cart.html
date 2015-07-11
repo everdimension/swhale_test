@@ -1,0 +1,18 @@
+<nav>
+	<ul class="navbar-nav pull-right cart-nav">
+		<li class="dropdown" ng-class="{'open': cartOpen}">
+			<a href="#" ng-click="toggleCart()">Cart: {{cart.items.length}} items</a>
+			<ul class="dropdown-menu dropdown-menu-right cart-items-list" id="card-popup">
+				<li ng-repeat="item in cart.items" class="card-item">
+
+					{{item.name}}, <b>quantity</b>: {{item.orderedAmount}}, <b>price</b>: {{item.price | currency}}
+
+				</li>
+
+				<li>
+					<button class="btn btn-danger" ng-click="cart.clearItems()">clear cart</button>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>

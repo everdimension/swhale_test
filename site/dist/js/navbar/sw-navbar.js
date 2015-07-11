@@ -1,0 +1,2 @@
+angular.module("swhale.navbar",["swhale.session","swhale.progress"]).directive("swNavbar",["AuthSvc","Session","Progress",function(s,e,r){return{restrict:"EA",scope:{},templateUrl:"/js/navbar/sw-navbar.html",link:function(a,n,t){a.AuthSvc=s,a.Session=e,a.Progress=r}}}]);
+//# sourceMappingURL=../../../sourcemaps/navbar/sw-navbar.js.map

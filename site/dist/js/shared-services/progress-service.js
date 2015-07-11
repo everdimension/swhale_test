@@ -1,0 +1,2 @@
+angular.module("swhale.progress",[]).service("Progress",function(){var n={},r=[];return n.startLoading=function(n){r.push(n)},n.finishLoading=function(n){var e=r.indexOf(n);return-1!==e?(r.splice(e,1),!0):!1},n.isLoading=function(n){return n?-1!==r.indexOf(n):!!r.length},n}).run(["$rootScope","Progress",function(n,r){n.Progress=r}]);
+//# sourceMappingURL=../../../sourcemaps/shared-services/progress-service.js.map

@@ -1,0 +1,54 @@
+<div class="row" ng-show="Progress.isLoading('items')">
+	<div class="col-sm-12 text-center">
+		<div class="loader loader-lg"></div>
+	</div>
+</div>
+
+<p ng-show="!Progress.isLoading('items') && !items.length">No items.</p>
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-default" ng-repeat="item in items">
+			<div class="panel-body">
+				<div class="media">
+					<div class="media-left">
+						<img ng-src="{{item.img}}" alt="item image" class="media-object">
+					</div>
+
+					<div class="media-body">
+
+						<div class="row">
+
+							<div class="col-sm-4">
+								<p>{{item.name}}</p>
+								<p>{{item.color}}</p>
+							</div>
+							<div class="col-sm-4">
+								<p> Issue date: {{item.issueDate | date : 'shortDate'}}</p>
+								<p>
+									<span class="glyphicon"
+										ng-class="{
+											'glyphicon-ok text-success': item.inStock,
+											'glyphicon-remove text-danger': !item.inStock
+										}"
+									></span>
+									In stock
+								</p>
+							</div>
+							<div class="col-sm-4">
+								<p>{{item.price | currency}}</p>
+								<p>
+									<button class="btn btn-success" ng-disabled="!item.inStock" ng-click="CartSvc.addItem(item)" id="cart_item-{{item._id}}">
+											Order
+									</button>
+								</p>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

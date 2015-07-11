@@ -1,0 +1,37 @@
+<div class="row" ng-show="showError">
+	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<div class="alert alert-danger">
+			<button class="close" ng-click="showError = false">&times;</button>
+			{{errorMsg}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+		<div class="panel panel-default panel-lg">
+			<div class="panel-body">
+				<form name="loginForm" ng-submit="login(loginForm)" novalidate>
+					<div class="form-group" ng-class="{'has-error': loginForm.displayErrors && loginForm.login.$invalid}">
+						<label for="login">Login</label>
+						<input class="form-control" ng-model="credentials.login" type="email" name="login" id="login" required>
+					</div>
+					<div class="form-group" ng-class="{'has-error': loginForm.displayErrors && loginForm.password.$invalid}">
+						<label for="password">Password</label>
+						<input class="form-control" ng-model="credentials.password" type="password" name="password" id="password" required>
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-primary btn-full-width" ng-disabled="Progress.isLoading('login')">
+							<span ng-show="Progress.isLoading('login')">loading...</span>
+							<span ng-hide="Progress.isLoading('login')">login</span>
+						</button>
+					</div>
+					<p class="text-center">
+						<a ui-sref="app.signup">Register</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

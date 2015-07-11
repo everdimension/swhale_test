@@ -1,0 +1,2 @@
+angular.module("swhale.cart.service",[]).service("CartSvc",["$sessionStorage",function(e){var r={},t=r.orderedItems=e.orderedItems;return t||(e.orderedItems=t=[]),r.addItem=function(e){for(var r=-1,n=0;n<t.length;n++)if(t[n]._id===e._id){r=n;break}-1!==r?t[r].orderedAmount+=1:(e.orderedAmount=1,t.push(e))},r.getItems=function(){return t},r.clearItems=function(){t.length=0},r}]).run(["$rootScope","CartSvc",function(e,r){e.CartSvc=r}]);
+//# sourceMappingURL=../../../sourcemaps/cart/cart-service.js.map
