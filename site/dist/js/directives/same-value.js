@@ -1,0 +1,2 @@
+angular.module("directives").directive("sameValue",function(){return{restrict:"A",require:"ngModel",scope:{referenceValue:"=sameValue"},link:function(e,l,i,r){r.$validators.sameValue=function(){return console.log("referenceValue",e.referenceValue),isValid=r.$viewValue===e.referenceValue,console.log("isValid",isValid,r),isValid}}}});
+//# sourceMappingURL=../../../sourcemaps/directives/same-value.js.map

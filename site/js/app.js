@@ -3,6 +3,7 @@ angular.module('swhale', [
 	'swhale.auth',
 	'swhale.navbar',
 	'swhale.cart',
+	'directives',
 	'ui.router'
 ])
 

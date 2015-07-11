@@ -23,14 +23,14 @@
 					</div>
 					<div class="form-group" ng-class="{'has-error': signupForm.displayErrors && signupForm.passwordRepeat.$invalid}">
 						<label for="passwordRepeat">Repeat password</label>
-						<input class="form-control" ng-model="passwordCopy" same-pass="credentials.password" type="password" name="passwordRepeat" id="passwordRepeat" required>
+						<input class="form-control" ng-model="passwordCopy" same-value="credentials.password" type="password" name="passwordRepeat" id="passwordRepeat" required>
 					</div>
 
 
 					<div class="form-group">
-						<button class="btn btn-primary btn-full-width" ng-disabled="Progress.isLoading('login')">
-							<span ng-show="Progress.isLoading('login')">loading...</span>
-							<span ng-hide="Progress.isLoading('login')">sign up</span>
+						<button class="btn btn-primary btn-full-width" ng-disabled="Progress.isLoading('signup')">
+							<span ng-show="Progress.isLoading('signup')">loading...</span>
+							<span ng-hide="Progress.isLoading('signup')">sign up</span>
 						</button>
 					</div>
 					<p class="text-center">
